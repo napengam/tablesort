@@ -1,2 +1,2 @@
 # tablesort
-Sorting html table aling column values
+Sorting html table along column values
