@@ -1,6 +1,6 @@
 <h1>Sorting a table along column values</h1>
 
-<pre style="font-family:Verdana;line-height:1em">
+<ppre style="font-family:Verdana;line-height:1em">
 
 Example at <a href="http://hgsweb.de/tablesort">http://hgsweb.de/tablesort</a>
 
