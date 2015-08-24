@@ -1,4 +1,4 @@
-function sortTable() {
+function sortTable(id) {
     'use strict';
     //
     // build in default function to extract a value from table cell    
@@ -33,7 +33,7 @@ function sortTable() {
         }
         while (obj !== null) {
             obj = obj.parentNode;
-            if (obj.tagName === 'TABLE') {
+            if (obj.tagName === 'TABLE' && obj.id === id) {
                 table = obj;
                 break;
             }

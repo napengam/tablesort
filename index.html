@@ -4,6 +4,9 @@
         <title>Sort Table</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
+            body{
+                font-size:1rem;
+            }
             .sort:hover{
                 cursor:pointer;
             }
@@ -11,7 +14,7 @@
         <script type="text/javascript" src="js/sortTable.js"></script>
         <script type="text/javascript">
             var st;
-            st = sortTable();
+            st = sortTable('table');
             function getColor(cell) {
                 if (typeof cell.style !== 'undefined') {
                     return cell.style.backgroundColor;
@@ -38,7 +41,7 @@
                     <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1);">Colum 2 
                         <img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1);">
                     </th>
-                    <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1, getColor);">Colum 3 
+                    <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1, getColor);">Colum 3
                         <img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1, getColor);">
                     </th>
                 </tr>
