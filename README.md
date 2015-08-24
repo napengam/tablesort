@@ -64,7 +64,7 @@ If you want to temporarily overwrite the default function for comparing  cell va
 write  a function like 
 <pre>
     function compareValue(currentCell,refrenceCell){
-        // your code here to compare currentCell versus refrenceCell     
+        // your code here to compare currentCell versus referenceCell     
         return // result of comparison as -1 or 0 or 1;
     }
 </pre>

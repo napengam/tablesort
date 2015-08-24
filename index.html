@@ -20,52 +20,65 @@
                 } else {
                     return '';
                 }
-            }         
-            st = sortTable('table');      
+            }
+            st = sortTable('table');
         </script>
     </head>
     <body>
 
         <h2>implements a simple sort</h2>
 
+        <p>Column 3 will be  sorted by background color.<br>
 
         <table id="table" border="1">
             <thead>
                 <tr>
-                    <th><span class=sort onclick="st.sortCore(1);" title="sort ascending"><b>++</b>
+                    <th>
+            <table> <!-- test function walkUp up in sortTable -->
+                <tr>
+                    <td><span class=sort onclick="st.sortCore(1);" title="sort ascending"><b>++</b>
                         </span>Colum 0<span class=sort onclick="st.sortCore(-1);" title="sort descending"><b>--</b></span>
-                    </th>
-                    <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1);">Colum 1
-                        <img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1);">
-                    </th>
-                    <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1);">Colum 2 
-                        <img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1);">
-                    </th>
-                    <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1, getColor);">Colum 3
-                        <img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1, getColor);">
-                    </th>
+                    </td>
                 </tr>
-            </thead>
-            <tr><td>5</td><td>7</td><td>1</td><td style="background:red">bad value</td></tr>
-            <tr><td>88</td><td>6</td><td>7</td><td></td></tr>
-            <tr><td>3</td><td>0</td><td>77</td><td></td></tr>
-            <tr><td>5</td><td>7</td><td>1</td><td></td></tr>
-            <tr><td>88</td><td>6</td><td>7</td><td style="background:red">red cell</td></tr>
-            <tr><td>Schulze</td><td>0</td><td>77</td><td></td></tr>
-            <tr><td>A</td><td>7</td><td>1</td><td></td></tr>
-            <tr><td>88</td><td>6</td><td>7</td><td></td></tr>
-            <tr><td>3</td><td>0</td><td></td><td style="background:green"></td></tr>
-            <tr><td>5</td><td>7</td><td>1</td><td></td></tr>
-            <tr><td>88</td><td>6</td><td>U</td><td></td>  </tr>
-            <tr><td>5</td><td>7</td><td>1</td><td  style="background:blue"></td></tr>
-            <tr><td>88</td><td>6</td><td></td><td></td></tr>
-            <tr><td>3</td><td>0</td><td><br>77</td><td></td></tr>
-            <tr><td>Albert</td><td>7</td><td>1</td><td style="background:red">absolute chaos</td></tr>
-            <tr><td>88</td><td>6</td><td>Ä</td><td></td></tr>
-            <tr><td>b</td><td>0</td><td>77</td><td></td></tr>
-            <tr><td>5</td><td>7</td><td>1</td><td style="background:yellow"></td></tr>
-            <tr><td>88</td><td>6</td><td>7</td><td></td></tr>
-            <tr><td>!</td><td>0</td><td></td><td style="background:green"></td></tr>
+            </table>
+        </th>
+        <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1);">Colum 1
+            <img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1);">
+        </th>
+        <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1);">Colum 2 
+            <img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1);">
+        </th>
+        <th>
+        <table><!-- test function walkUp up in sortTable -->
+            <tr>
+                <td><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1, getColor);"></td>
+                <td>Colum 3 sorted <br>by background color</td>
+                <td><img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1, getColor);"></td>
+            </tr>
         </table>
-    </body>
+    </th>
+</tr>
+</thead>
+<tr><td>5</td><td>7</td><td>1</td><td style="background:red">bad value</td></tr>
+<tr><td>88</td><td>6</td><td>7</td><td></td></tr>
+<tr><td>3</td><td>0</td><td>77</td><td></td></tr>
+<tr><td>5</td><td>7</td><td>1</td><td></td></tr>
+<tr><td>88</td><td>6</td><td>7</td><td style="background:red">red cell</td></tr>
+<tr><td>Schulze</td><td>0</td><td>77</td><td></td></tr>
+<tr><td>A</td><td>7</td><td>1</td><td></td></tr>
+<tr><td>88</td><td>6</td><td>7</td><td></td></tr>
+<tr><td>3</td><td>0</td><td></td><td style="background:green"></td></tr>
+<tr><td>5</td><td>7</td><td>1</td><td></td></tr>
+<tr><td>88</td><td>6</td><td>U</td><td></td>  </tr>
+<tr><td>5</td><td>7</td><td>1</td><td  style="background:blue"></td></tr>
+<tr><td>88</td><td>6</td><td></td><td></td></tr>
+<tr><td>3</td><td>0</td><td><br>77</td><td></td></tr>
+<tr><td>Albert</td><td>7</td><td>1</td><td style="background:red">absolute chaos</td></tr>
+<tr><td>88</td><td>6</td><td>Ä</td><td></td></tr>
+<tr><td>b</td><td>0</td><td>77</td><td></td></tr>
+<tr><td>5</td><td>7</td><td>1</td><td style="background:yellow"></td></tr>
+<tr><td>88</td><td>6</td><td>7</td><td></td></tr>
+<tr><td>!</td><td>0</td><td></td><td style="background:green"></td></tr>
+</table>
+</body>
 </html>

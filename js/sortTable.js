@@ -28,11 +28,8 @@ function sortTable(id) {
             obj = obj.parentNode;
             if (obj.tagName === 'TD' || obj.tagName === 'TH') {
                 col = obj.cellIndex;
-                break;
+                continue;
             }
-        }
-        while (obj !== null) {
-            obj = obj.parentNode;
             if (obj.tagName === 'TABLE' && obj.id === id) {
                 table = obj;
                 break;
