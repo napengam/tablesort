@@ -30,7 +30,7 @@ See example for the last column of the table, where sorting is done along the
 <b>backgroudColor</b> passing in the function <b>getColor</b> 
 
 
-<h2>Usage</hs>
+<h2>Usage</h2>
 
 <b>JavaScript</b>
 
