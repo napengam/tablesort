@@ -14,14 +14,14 @@
         <script type="text/javascript" src="js/sortTable.js"></script>
         <script type="text/javascript">
             var st;
-            st = sortTable('table');
             function getColor(cell) {
                 if (typeof cell.style !== 'undefined') {
                     return cell.style.backgroundColor;
                 } else {
                     return '';
                 }
-            }
+            }         
+            st = sortTable('table');      
         </script>
     </head>
     <body>
@@ -54,18 +54,18 @@
             <tr><td>Schulze</td><td>0</td><td>77</td><td></td></tr>
             <tr><td>A</td><td>7</td><td>1</td><td></td></tr>
             <tr><td>88</td><td>6</td><td>7</td><td></td></tr>
-            <tr><td>3</td><td>0</td><td>77</td><td style="background:green"></td></tr>
+            <tr><td>3</td><td>0</td><td></td><td style="background:green"></td></tr>
             <tr><td>5</td><td>7</td><td>1</td><td></td></tr>
             <tr><td>88</td><td>6</td><td>U</td><td></td>  </tr>
             <tr><td>5</td><td>7</td><td>1</td><td  style="background:blue"></td></tr>
             <tr><td>88</td><td>6</td><td></td><td></td></tr>
-            <tr><td>3</td><td>0</td><td>999<br>77</td><td></td></tr>
+            <tr><td>3</td><td>0</td><td><br>77</td><td></td></tr>
             <tr><td>Albert</td><td>7</td><td>1</td><td style="background:red">absolute chaos</td></tr>
             <tr><td>88</td><td>6</td><td>Ä</td><td></td></tr>
             <tr><td>b</td><td>0</td><td>77</td><td></td></tr>
             <tr><td>5</td><td>7</td><td>1</td><td style="background:yellow"></td></tr>
             <tr><td>88</td><td>6</td><td>7</td><td></td></tr>
-            <tr><td>!</td><td>0</td><td>77</td><td style="background:green"></td></tr>
+            <tr><td>!</td><td>0</td><td></td><td style="background:green"></td></tr>
         </table>
     </body>
 </html>
