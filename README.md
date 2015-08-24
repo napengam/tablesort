@@ -60,13 +60,14 @@ Pass this function to sortCore like: onclick="st.sortCor(-1,getValue);"
 
 If you want to temporarily overwrite the default function for comparing  cell values
 write  a function like 
+<pre>
 <code>
     function compareValue(currentCell,refrenceCell){
         <your code here>
         return <value>;
     }
 </code>
-
+</pre>
 Pass this function to sortCore like: onclick="st.sortCor(-1,null,compareValue);"
 
 Overwrite the default functionality for accessing cell values and comparison permantly
