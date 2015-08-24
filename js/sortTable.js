@@ -19,7 +19,7 @@ function sortTable(id) {
     };
     //
     // walk up the DOM starting at the object where the click event happened 
-    // to find cellindex and table 
+    // to find cellindex and table.
     //
     function walkUp(obj) {
 
