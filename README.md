@@ -49,24 +49,22 @@ this:
 
 If you want to temporarily overwrite the default function for accessing the cell value
 write  a function like 
-<code>
+<pre>
     function getValue(tableDataCell){
-        <your code here>
-        return <value>;
+        // your code here to grep value from table DataCell
+        return value;
     }
-</code>
+</pre>
 
 Pass this function to sortCore like: onclick="st.sortCor(-1,getValue);"
 
 If you want to temporarily overwrite the default function for comparing  cell values
 write  a function like 
 <pre>
-<code>
     function compareValue(currentCell,refrenceCell){
-        <your code here>
-        return <value>;
+        // your code here comapare 
+        return // result of comparsion as -1 or 0 or 1;
     }
-</code>
 </pre>
 Pass this function to sortCore like: onclick="st.sortCor(-1,null,compareValue);"
 
