@@ -62,8 +62,8 @@ If you want to temporarily overwrite the default function for comparing  cell va
 write  a function like 
 <pre>
     function compareValue(currentCell,refrenceCell){
-        // your code here comapare 
-        return // result of comparsion as -1 or 0 or 1;
+        // your code here to compare currentCell versus refrenceCell     
+        return // result of comparison as -1 or 0 or 1;
     }
 </pre>
 Pass this function to sortCore like: onclick="st.sortCor(-1,null,compareValue);"
