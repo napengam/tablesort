@@ -56,8 +56,10 @@ write  a function like
     }
 </pre>
 
-Pass this function to sortCore like: onclick="st.sortCor(-1,getValue);"
-
+Pass this function to sortCore like: 
+<ul>
+<li>onclick="st.sortCor(-1,getValue);"
+</ul>
 If you want to temporarily overwrite the default function for comparing  cell values
 write  a function like 
 <pre>
@@ -66,8 +68,10 @@ write  a function like
         return // result of comparison as -1 or 0 or 1;
     }
 </pre>
-Pass this function to sortCore like: onclick="st.sortCor(-1,null,compareValue);"
-
+Pass this function to sortCore like: 
+<ul>
+<li>onclick="st.sortCor(-1,null,compareValue);"
+</ul>
 Overwrite the default functionality for accessing cell values and comparison permantly
 
 say:
