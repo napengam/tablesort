@@ -1,29 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sort Table</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <style>
-            body{
-                font-size:1rem;
-            }
-            .sort:hover{
-                cursor:pointer;
-            }
-        </style>
-        <script type="text/javascript" src="js/sortTable.js"></script>
-        <script type="text/javascript">
-            var st;
-            function getColor(cell) {
-                if (typeof cell.style !== 'undefined') {
-                    return cell.style.backgroundColor;
-                } else {
-                    return '';
-                }
-            }
-            st = sortTable('table');
-        </script>
+        <link rel="stylesheet" 
+              href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
+              integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" 
+              crossorigin="anonymous">
     </head>
+
     <body>
 
         <h2>implements a simple sort</h2>
@@ -34,51 +20,67 @@
             <thead>
                 <tr> 
                     <th>
-            <table> <!-- test function walkUp up in sortTable -->
-                <tr>
-                    <td><span class=sort onclick="st.sortCore(1);" title="sort ascending"><b>++</b>
-                        </span>Colum 0<span class=sort onclick="st.sortCore(-1);" title="sort descending"><b>--</b></span>
-                    </td>
+                        <table> <!-- test function walkUp up in sortTable -->
+                            <tr>
+                                <td>
+                                    <i class="fas fa-sort-up" onclick="st.sortCore(1);"></i>
+                                    Colum 0
+                                    <i class="fas fa-sort-down" onclick="st.sortCore(-1);"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th> <i class="fas fa-sort-up" onclick="st.sortCore(1);"></i>
+                        Colum 1
+                        <i class="fas fa-sort-down" onclick="st.sortCore(-1);"></i>
+                    </th>
+                    <th><i class="fas fa-sort-up" onclick="st.sortCore(1);"></i>
+                        Colum 2 
+                        <i class="fas fa-sort-down" onclick="st.sortCore(-1);"></i>
+                    </th>
+                    <th>
+                        <table><!-- test function walkUp up in sortTable -->
+                            <tr>
+                                <td><i class="fas fa-sort-up" onclick="st.sortCore(1, getColor);"></i></td>
+                                <td>Colum 3 sorted <br>by background color</td>
+                                <td><i class="fas fa-sort-down"  onclick="st.sortCore(-1, getColor);"></i></td>
+                            </tr>
+                        </table>
+                    </th>
                 </tr>
-            </table>
-        </th>
-        <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1);">Colum 1
-            <img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1);">
-        </th>
-        <th><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1);">Colum 2 
-            <img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1);">
-        </th>
-        <th>
-        <table><!-- test function walkUp up in sortTable -->
-            <tr>
-                <td><img class=sort src="sort-up.gif" title="sort ascending" onclick="st.sortCore(1, getColor);"></td>
-                <td>Colum 3 sorted <br>by background color</td>
-                <td><img title="sort descending" class=sort src="sort-down.gif" onclick="st.sortCore(-1, getColor);"></td>
-            </tr>
+            </thead>
+            <tr><td>5</td><td>7</td><td>1</td><td style="background:red">bad value</td></tr>
+            <tr><td>88</td><td>6</td><td>7</td><td></td></tr>
+            <tr><td>3</td><td>0</td><td>77</td><td></td></tr>
+            <tr><td>5</td><td>7</td><td>1</td><td></td></tr>
+            <tr><td>88</td><td>6</td><td>7</td><td style="background:red">red cell</td></tr>
+            <tr><td>Schulze</td><td>0</td><td>77</td><td></td></tr>
+            <tr><td>A</td><td>7</td><td>1</td><td></td></tr>
+            <tr><td>88</td><td>6</td><td>7</td><td></td></tr>
+            <tr><td>3</td><td>0</td><td></td><td style="background:green"></td></tr>
+            <tr><td>5</td><td>7</td><td>1</td><td></td></tr>
+            <tr><td>88</td><td>6</td><td>U</td><td></td>  </tr>
+            <tr><td>5</td><td>7</td><td>1</td><td  style="background:blue"></td></tr>
+            <tr><td>88</td><td>6</td><td></td><td></td></tr>
+            <tr><td>3</td><td>0</td><td><br>77</td><td></td></tr>
+            <tr><td>Albert</td><td>7</td><td>1</td><td style="background:red">absolute chaos</td></tr>
+            <tr><td>88</td><td>6</td><td>Ä</td><td></td></tr>
+            <tr><td>b</td><td>0</td><td>77</td><td></td></tr>
+            <tr><td>5</td><td>7</td><td>1</td><td style="background:yellow"></td></tr>
+            <tr><td>88</td><td>6</td><td>7</td><td></td></tr>
+            <tr><td>!</td><td>0</td><td></td><td style="background:green"></td></tr>
         </table>
-    </th>
-</tr>
-</thead>
-<tr><td>5</td><td>7</td><td>1</td><td style="background:red">bad value</td></tr>
-<tr><td>88</td><td>6</td><td>7</td><td></td></tr>
-<tr><td>3</td><td>0</td><td>77</td><td></td></tr>
-<tr><td>5</td><td>7</td><td>1</td><td></td></tr>
-<tr><td>88</td><td>6</td><td>7</td><td style="background:red">red cell</td></tr>
-<tr><td>Schulze</td><td>0</td><td>77</td><td></td></tr>
-<tr><td>A</td><td>7</td><td>1</td><td></td></tr>
-<tr><td>88</td><td>6</td><td>7</td><td></td></tr>
-<tr><td>3</td><td>0</td><td></td><td style="background:green"></td></tr>
-<tr><td>5</td><td>7</td><td>1</td><td></td></tr>
-<tr><td>88</td><td>6</td><td>U</td><td></td>  </tr>
-<tr><td>5</td><td>7</td><td>1</td><td  style="background:blue"></td></tr>
-<tr><td>88</td><td>6</td><td></td><td></td></tr>
-<tr><td>3</td><td>0</td><td><br>77</td><td></td></tr>
-<tr><td>Albert</td><td>7</td><td>1</td><td style="background:red">absolute chaos</td></tr>
-<tr><td>88</td><td>6</td><td>Ä</td><td></td></tr>
-<tr><td>b</td><td>0</td><td>77</td><td></td></tr>
-<tr><td>5</td><td>7</td><td>1</td><td style="background:yellow"></td></tr>
-<tr><td>88</td><td>6</td><td>7</td><td></td></tr>
-<tr><td>!</td><td>0</td><td></td><td style="background:green"></td></tr>
-</table>
-</body>
+        <script type="text/javascript" src="js/sortTable.js"></script>
+        <script>
+            var st;
+            function getColor(cell) {
+                if (typeof cell.style !== 'undefined') {
+                    return cell.style.backgroundColor;
+                } else {
+                    return '';
+                }
+            }
+            st = sortTable('table');
+        </script>
+    </body>
 </html>

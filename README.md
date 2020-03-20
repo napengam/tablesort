@@ -1,6 +1,6 @@
 <h1>Sorting a table along column values</h1>
 
-Example at <a href="http://hgsweb.de/tablesort">http://hgsweb.de/tablesort</a>
+Example at <a href="http://hgsweb.de/tablesort/index.html">http://hgsweb.de/tablesort</a>
 
 <h2> Logic </h2>
 
