@@ -8,6 +8,10 @@
               href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
               integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" 
               crossorigin="anonymous">
+        <style>
+            table,tr,td,th{border:1px solid black; border-collapse:collapse}
+        </style>
+
     </head>
 
     <body>
@@ -16,7 +20,7 @@
 
         <p>Column 3 will be  sorted by background color.<br>
 
-        <table id="table" border="1">
+        <table id="table" >
             <thead>
                 <tr> 
                     <th>
@@ -72,15 +76,15 @@
         </table>
         <script type="text/javascript" src="js/sortTable.js"></script>
         <script>
-            var st;
-            function getColor(cell) {
-                if (typeof cell.style !== 'undefined') {
-                    return cell.style.backgroundColor;
-                } else {
-                    return '';
-                }
-            }
-            st = sortTable('table');
+                                    var st;
+                                    function getColor(cell) {
+                                        if (typeof cell.style !== 'undefined') {
+                                            return cell.style.backgroundColor;
+                                        } else {
+                                            return '';
+                                        }
+                                    }
+                                    st = sortTable('table');
         </script>
     </body>
 </html>
