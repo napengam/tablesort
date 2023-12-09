@@ -4,18 +4,13 @@ function sortTable(id) {
     // build in default function to extract a value from table cell    
     //
     var getValue = function (cell) {
-        return cell.textContent;
+        return cell.textContent.trim();
     };
     //
     // build in default function to compare values    
     //
     var compareValues = function (v1, v2) {
-        if (v1 > v2) {
-            return 1;
-        } else if (v1 < v2) {
-            return -1;
-        }
-        return 0;
+       return v1.localeCompare(v2);
     };
     //
     // walk up the DOM starting at the object where the click event happened 
@@ -25,56 +20,49 @@ function sortTable(id) {
 
         var col = 0, table = null;
         while (obj !== null) {
-            obj = obj.parentNode;
             if (obj.tagName === 'TD' || obj.tagName === 'TH') {
                 col = obj.cellIndex;
-                continue;
-            }
-            if (obj.tagName === 'TABLE' && obj.id === id) {
+            } else if (obj.tagName === 'TABLE' && obj.id === id) {
                 table = obj;
                 break;
             }
+            obj = obj.parentNode;
         }
         return {'col': col, 'table': table};
 
     }
-    function sortCore(dir, grepValue, compare) {
+    function sortCore(dir, grepValue = getValue, compare = compareValues) {
 
-        var tBody, rows, trFrom, trTo, o, col,
-                nr, cp = 0, i, ref, ref1, j, sw;
+        var tBody, rows, o, col;
 
         o = walkUp(window.event.currentTarget);
         if (o.table === null) {
             return;
         }
+
+        o.table.style.visibility = 'hidden';
         col = o.col;
         tBody = o.table.tBodies[0];
-        nr = tBody.rows.length;
+        rows = Array.from(tBody.rows);
+        o.table.removeChild(tBody);
+        rows.sort((a, b) => {
+            const cellA = grepValue(a.cells[col]);
+            const cellB = grepValue(b.cells[col]);
+            return compare(cellA, cellB) * dir;
+        });
+        let tbody = document.createElement("tbody");
+        rows.forEach(row => tbody.appendChild(row));
+        o.table.appendChild(tbody);
+        o.table.style.visibility = '';
 
-        if (typeof grepValue !== 'function' || grepValue === null) {
-            grepValue = getValue; // use default                     
-        }
-        if (typeof compare !== 'function' || compare === null) {
-            compare = compareValues; // use default                  
-        }
-        rows = tBody.rows;
-        for (i = 0; i < nr; i++) {
-            ref = grepValue(rows[i].cells[col]);
-            for (j = i + 1, sw = -1; j < nr; j++) {
-                ref1 = grepValue(rows[j].cells[col]);
-                cp = compare(ref1, ref);
-                if ((cp === 1 && dir === -1) || (cp === -1 && dir === 1)) {
-                    ref = ref1;
-                    sw = j;
-                }
-            }
-            if (sw > 0) {
-                trFrom = tBody.rows[sw];
-                tBody.removeChild(trFrom);
-                trTo = tBody.rows[i];
-                tBody.insertBefore(trFrom, trTo);
-            }
-        }
+    }
+
+    function sortUp(grepValue, compare) {
+        sortCore(1, grepValue, compare);
+
+    }
+    function sortDown(grepValue, compare) {
+        sortCore(-1, grepValue, compare);
     }
     //
     // overwrites default build in function 
@@ -89,6 +77,8 @@ function sortTable(id) {
         compareValues = funcName;
     }
     return {
+        sortUp: sortUp,
+        sortDown: sortDown,
         sortCore: sortCore, //(dir)
         setGrepValue: setGrepValue, //(funcName)
         setCompareValues: setCompareValues //(funcName)
